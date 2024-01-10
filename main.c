@@ -13,13 +13,14 @@ int main(void)
 {
 	char *buff = NULL, **args;
 	size_t read_size = 0;
-	size_t buff_size = 0;
+	ssize_t buff_size = 0;
 	int exit_stats = 0;
 
 	while (1)
 	{
 		if (isatty(0))
-			printf("hsh$");
+			printf("hsh$ ");
+
 		buff_size = getline(&buff, &read_size, stdin);
 		if (buff_size == -1 || _strncmp("exit\n", buff) == 0)
 		{
@@ -40,7 +41,7 @@ int main(void)
 			continue;
 		}
 
-		args = _slipts(buff, " ");
+		args = _splits(buff, " ");
 		args[0] = search_path(args[0]);
 
 		if (args[0] != NULL)

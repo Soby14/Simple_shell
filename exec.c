@@ -1,4 +1,4 @@
-#include "shell."
+#include "shell.h"
 
 /**
  * exec - Execute a command from a specified path in a child process.
@@ -14,14 +14,14 @@ int exec(char **args)
 
 	if (id == 0)
 	{
-		if (exec(args[0], args, environ) == -1)
+		if (execve(args[0], args, environ) == -1)
 			perror("Error");
 	}
 	else
 	{
 		wait(&stats);
 		if (WIFEXITED(stats))
-			stats == WEXITSTATS(stats);
+			stats = WEXITSTATUS(stats);
 	}
 
 	return (stats);

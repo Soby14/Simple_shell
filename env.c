@@ -24,7 +24,7 @@ char *_getenviron(char *env_var)
 		}
 		if (stats == 1)
 			break;
-		i++
+		i++;
 	}
 	return (&environ[i][j + 1]);
 }
@@ -38,7 +38,7 @@ void _environ(void)
 
 	while (environ[i])
 	{
-		printf("%s\n", environ[i])
+		printf("%s\n", environ[i]);
 			i++;
 	}
 }
