@@ -1,4 +1,4 @@
-#ifndef Shell_H
+#ifndef SHELL_H
 #define SHELL_H
 
 /*LIBRARIES*/
